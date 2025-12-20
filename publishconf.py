@@ -9,8 +9,8 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-# Production URL - update with your GitHub username
-SITEURL = 'https://tejasruikar.github.io/tejasruikar'
+# Production URL - GitHub Pages user site
+SITEURL = 'https://tejasruikar.github.io'
 RELATIVE_URLS = False
 
 # Enable feeds in production
