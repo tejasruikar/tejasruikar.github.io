@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Blog - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<section class="blog">
+    <h1>Blog</h1>
+    
+    <ul class="article-list">
+        {% for article in articles_page.object_list %}
+        <li>
+            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            <span class="date">{{ article.date.strftime('%Y-%m-%d') }}</span>
+        </li>
+        {% else %}
+        <li class="no-articles">No articles yet. Check back soon!</li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% if articles_page.has_other_pages() %}
+<nav class="pagination">
+    {% if articles_page.has_previous() %}
+    <a href="{{ SITEURL }}/{{ articles_page.previous_page.url }}">&larr; Newer</a>
+    {% endif %}
+    
+    <span>Page {{ articles_page.number }} of {{ articles_page.paginator.num_pages }}</span>
+    
+    {% if articles_page.has_next() %}
+    <a href="{{ SITEURL }}/{{ articles_page.next_page.url }}">Older &rarr;</a>
+    {% endif %}
+</nav>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+    {% endif %}
+</head>
+<body>
+    <div class="grain-overlay"></div>
+    
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="{{ SITEURL }}/" class="nav-brand">{{ SITENAME }}</a>
+            <ul class="nav-links">
+                {% for title, link in MENUITEMS %}
+                <li><a href="{{ SITEURL }}{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; {{ SITENAME }} · Built with <a href="https://getpelican.com" target="_blank">Pelican</a></p>
+                {% if SOCIAL %}
+                <ul class="social-links">
+                    {% for name, link in SOCIAL %}
+                    <li><a href="{{ link }}" target="_blank" rel="noopener">{{ name }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+

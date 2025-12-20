@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}#{{ tag.name }} · {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h1 class="page-title">#{{ tag.name }}</h1>
+    <p class="page-subtitle">{{ articles|count }} article{% if articles|count != 1 %}s{% endif %}</p>
+</header>
+
+<section class="articles">
+    {% for article in articles %}
+    <article class="article-card">
+        <div class="article-meta">
+            <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+        </div>
+        <h2 class="article-title">
+            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+        </h2>
+        {% if article.summary %}
+        <p class="article-summary">{{ article.summary }}</p>
+        {% endif %}
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}
+
+
+
+

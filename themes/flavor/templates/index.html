@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Blog · {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h1 class="page-title">Blog</h1>
+    <p class="page-subtitle">Thoughts, tutorials, and updates</p>
+</header>
+
+<section class="articles">
+    {% for article in articles_page.object_list %}
+    <article class="article-card">
+        <div class="article-meta">
+            <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+            {% if article.category %}
+            <span class="article-category">{{ article.category }}</span>
+            {% endif %}
+        </div>
+        <h2 class="article-title">
+            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+        </h2>
+        {% if article.summary %}
+        <p class="article-summary">{{ article.summary }}</p>
+        {% endif %}
+        {% if article.tags %}
+        <ul class="article-tags">
+            {% for tag in article.tags %}
+            <li><a href="{{ SITEURL }}/{{ tag.url }}">#{{ tag.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </article>
+    {% else %}
+    <p class="no-articles">No articles yet. Check back soon!</p>
+    {% endfor %}
+</section>
+
+{% if articles_page.has_other_pages() %}
+<nav class="pagination">
+    {% if articles_page.has_previous() %}
+    <a href="{{ SITEURL }}/{{ articles_page.previous_page.url }}" class="pagination-link prev">&larr; Newer</a>
+    {% endif %}
+    
+    <span class="pagination-info">Page {{ articles_page.number }} of {{ articles_page.paginator.num_pages }}</span>
+    
+    {% if articles_page.has_next() %}
+    <a href="{{ SITEURL }}/{{ articles_page.next_page.url }}" class="pagination-link next">Older &rarr;</a>
+    {% endif %}
+</nav>
+{% endif %}
+{% endblock %}
+
+
+
+

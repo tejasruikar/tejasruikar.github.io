@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} · {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<article class="article-full">
+    <header class="article-header">
+        <div class="article-meta">
+            <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%B %d, %Y') }}</time>
+            {% if article.category %}
+            <span class="article-category">{{ article.category }}</span>
+            {% endif %}
+        </div>
+        <h1 class="article-title">{{ article.title }}</h1>
+        {% if article.tags %}
+        <ul class="article-tags">
+            {% for tag in article.tags %}
+            <li><a href="{{ SITEURL }}/{{ tag.url }}">#{{ tag.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </header>
+    
+    <div class="article-content">
+        {{ article.content }}
+    </div>
+    
+    <footer class="article-footer">
+        <a href="{{ SITEURL }}/" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</article>
+{% endblock %}
+
+
+
+
