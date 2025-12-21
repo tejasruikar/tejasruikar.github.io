@@ -7,8 +7,8 @@ Status: published
 Summary: A detailed look at how this personal website is built using Pelican and automatically deployed to GitHub Pages.
 
 # How This Site is Built and Deployed
-
-This website is a static site built with [Pelican](https://getpelican.com/), a Python-based static site generator. In this post, I'll walk you through the technology stack, build process, and automated deployment pipeline.
+The motivation for this site comes from [Adam Johnson](https://adamj.eu). Ever since I started learning and working on Django, I came across Adam's site for various different things and led me to build my portfolio similar to his.
+This website is a static site built with [Pelican](https://getpelican.com/). In this post, I'll walk you through the technology stack, build process, and automated deployment pipeline.
 
 ## Technology Stack
 
@@ -167,7 +167,6 @@ Pages like the home page are in `content/pages/` with similar metadata structure
 
 Some potential enhancements I'm considering:
 
-- Add a comment system (possibly using GitHub Discussions or Giscus)
 - Implement a search functionality
 - Add syntax highlighting for code blocks
 - Create more custom theme features
