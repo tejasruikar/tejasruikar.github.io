@@ -16,8 +16,11 @@ I love bridging the gap between backend performance optimization and user-centri
 
 I specialize in designing **distributed ML-driven systems** and **full-stack applications** across diverse domains.
 
-## Get in Touch
+# Website
+Please enjoy exploring my site under these sections:
 
-- **Email**: [tejasruikar@live.com](mailto:tejasruikar@live.com)
-- **LinkedIn**: [linkedin.com/in/tejasruikar](https://linkedin.com/in/tejasruikar)
-- **GitHub**: [github.com/tejasruikar](https://github.com/tejasruikar)
+- [Articles](/blog/)
+- [Projects](/projects.html)
+- [About](/)
+- [Contact](/contact.html)
+- [Colophon](/colophon.html)

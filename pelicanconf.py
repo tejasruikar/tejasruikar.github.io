@@ -57,6 +57,16 @@ SOCIAL = [
     ('Email', 'mailto:tejasruikar@live.com'),
 ]
 
+# Markdown configuration
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
+
 # Extra metadata
 DEFAULT_METADATA = {
     'status': 'draft',
