@@ -34,6 +34,8 @@ AUTHOR_FEED_RSS = None
 MENUITEMS = [
     ('Home', '/'),
     ('Blog', '/blog/'),
+    ('Contact', '/contact.html'),
+    ('Colophon', '/colophon.html'),
     ('Resume', '/files/resume.pdf'),
 ]
 
